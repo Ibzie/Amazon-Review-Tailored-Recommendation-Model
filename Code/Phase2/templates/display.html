@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel ="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+    <div id="header">
+        <h1 id="title">BDA Project</h1>
+        <h3>Fasih Ur Rehman (21I-1705), Ibrahim Akhtar (21I-1679), & Afaq Alam (21I-1700)</h3>
+    </div>
+
+<h1>Results</h1>
+<ul>
+    {% for product in products %}
+        <li>{{ product.title }} (ASIN: {{ product.asin }}) - {{ product.rating }} stars</li>
+    {% endfor %}
+</ul>
+
+<nav>
+    <a href="{{ url_for('home') }}" class="nav-button">Search again?</a>
+</nav>
+
+</body>
+</html>
